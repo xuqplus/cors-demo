@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div id="data"></div>
+<script>
+    function callback(value) {
+        alert("回调的参数是-->" + value)
+    }
+    $(document).ready(function () {
+        var a = document.createElement("script")
+        a.setAttribute("src", "http://localhost:8081/msg?callback=callback&a=1&b=2")
+        document.body.appendChild(a)
+    })
+</script>
+</body>
+</html>
