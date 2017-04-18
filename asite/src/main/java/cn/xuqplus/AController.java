@@ -1,5 +1,6 @@
 package cn.xuqplus;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ public class AController {
     }
 
     @RequestMapping("/msg")
-    public Object cors(@RequestParam Map map) {
+    public Object cors(@RequestParam Map map, HttpServletRequest request) {
         StringBuilder sb = new StringBuilder();
         String callback = (String) map.get("callback");
         int a = Integer.parseInt((String) map.get("a"));

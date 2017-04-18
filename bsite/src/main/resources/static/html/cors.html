@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div id="data"></div>
+<script>
+    $(document).ready(function () {
+        $.ajax("http://localhost:8081/data/data-01.json").then(function (response) {
+            $("#data").html(JSON.stringify(response))
+            console.log(JSON.stringify(response))
+        })
+    })
+</script>
+</body>
+</html>
